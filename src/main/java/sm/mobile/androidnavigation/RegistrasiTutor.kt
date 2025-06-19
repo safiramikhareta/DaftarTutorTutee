@@ -25,7 +25,7 @@ fun RegistrasiTutor(
     viewModel: TutorFormViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
     onSubmitSuccess: () -> Unit,
     onUploadCv: () -> Unit,
-    onBack: () -> Unit // // Parameter tambahan untuk navigasi back
+    onBack: () -> Unit
 ) {
     val formState by viewModel.formState.collectAsState()
     val snackbarHostState = remember { SnackbarHostState() }
@@ -36,7 +36,7 @@ fun RegistrasiTutor(
             TopAppBar(
                 title = { Text("Daftar Tutor", color = Color.White) },
                 navigationIcon = {
-                    IconButton(onClick = onBack) { // // Navigasi tombol back
+                    IconButton(onClick = onBack) {
                         Icon(Icons.Default.ArrowBack, contentDescription = "Back", tint = Color.White)
                     }
                 },
