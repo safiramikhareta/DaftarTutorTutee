@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package sm.mobile.androidnavigation
 
 import androidx.compose.foundation.layout.*
@@ -23,7 +25,30 @@ fun ListTutorScreen(
     onDaftarClick: () -> Unit
 ) {
     Scaffold(
-        bottomBar = { BottomBar(selectedRoute = "form", onItemClick = {}) }
+        topBar = {
+            TopAppBar(
+                title = {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(), // buat rata kiri
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = "Daftar Tutor",
+                            color = Color.White,
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            modifier = Modifier.padding(start = 8.dp)
+                        )
+                    }
+                },
+                colors = TopAppBarDefaults.smallTopAppBarColors(
+                    containerColor = DeepBlue
+                )
+            )
+        },
+        bottomBar = {
+            BottomBar(selectedRoute = "form", onItemClick = {})
+        }
     ) { padding ->
         Column(
             modifier = Modifier
@@ -42,11 +67,12 @@ fun ListTutorScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(48.dp),
+                colors = ButtonDefaults.buttonColors(containerColor = DeepBlue),
                 shape = RoundedCornerShape(12.dp)
             ) {
-                Text("Yuk Daftar Tutor")
+                Text("Yuk Daftar Tutor", color = Color.White)
                 Spacer(modifier = Modifier.width(8.dp))
-                Icon(Icons.Default.ArrowForward, contentDescription = null)
+                Icon(Icons.Default.ArrowForward, contentDescription = null, tint = Color.White)
             }
 
             Spacer(modifier = Modifier.height(16.dp))
