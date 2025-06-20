@@ -3,7 +3,6 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("org.jetbrains.kotlin.plugin.compose") version "2.0.0"
     id("com.google.devtools.ksp") version "2.0.21-1.0.27"
-    //kotlin("plugin.serialization") version "2.0.21" //kotlin serialization plugin for type safe routes & navigation arguments
 }
 
 android {
@@ -84,4 +83,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.7")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
     implementation("androidx.compose.material:material-icons-extended:1.7.8")
+    implementation("androidx.navigation:navigation-compose:2.8.9")
+
+    implementation("io.coil-kt:coil-compose:2.4.0")
 }
